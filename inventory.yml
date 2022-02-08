@@ -1,0 +1,10 @@
+---
+all:
+  hosts:
+    idrac:
+      idrac_ip: 10.0.0.175  # iDRAC IP address
+      idrac_port: 443       # iDRAC HTTP/HTTPS port, by default 443
+      idrac_user: root      # iDRAC user
+      idrac_pass: calvin    # iDRAC user's password
+      output_inventory_json: /tmp/idrac_inventory.json
+
