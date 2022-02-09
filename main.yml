@@ -1,12 +1,13 @@
 ---
-- name: Setup test
-  hosts: olsrv
-  gather_facts: no
-  user: ansible
-  become: true
+- hosts: idrac
+  gather_facts: False
+  connection: local
 
-  vars_files:
-    - vars/default.config.yml
+  collections:
+    - dellemc.openmanage
+
+#  vars_files:
+#    - vars/default.config.yml
 
 #  pre_tasks:
 #    - name: Include playbook configuration.
@@ -16,20 +17,7 @@
 #      tags: ['always']
 
   tasks:
-    - import_tasks: tasks/test.yml
-      when: cfg_test
-      tags: ['test']
-
-    - import_tasks: tasks/group.yml
-      #      when: cfg_test
-      tags: ['group']
-
-    - import_tasks: tasks/user.yml
-      #      when: cfg_test
-      tags: ['user']
-
-
-#    - import_tasks: tasks/terminal.yml
-#      when: configure_terminal
-#      tags: ['terminal']
+    - import_tasks: tasks/idrac_sys_inventory.yml
+#      when: idrac_inventory
+#      tags: ['sys_inventory']
 

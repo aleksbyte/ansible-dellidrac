@@ -1,0 +1,17 @@
+#
+  - name: Get system inventory.
+    dellemc.openmanage.idrac_system_info:
+      idrac_ip: "{{ idrac_ip }}"
+      idrac_user: "{{ idrac_user }}"
+      idrac_password: "{{ idrac_pass }}"
+      validate_certs: False   # Optional
+#      ca_path: "/tmp/ca_cert.pem"
+    register: system_inventory
+
+  - name: Write results to local output file
+    copy:
+      content: "{{ system_inventory }}"
+      dest: "{{ output_inventory_json }}"
+    delegate_to: localhost
+
+
