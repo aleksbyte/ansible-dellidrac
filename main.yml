@@ -20,4 +20,7 @@
     - import_tasks: tasks/idrac_sys_inventory.yml
 #      when: idrac_inventory
 #      tags: ['sys_inventory']
+      tags:
+        - never
+        - inventory
 
