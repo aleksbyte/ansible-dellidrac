@@ -11,5 +11,10 @@ sh build.sh 1.2 423 # Note: Numbers may change based on current version. See the
 cd dist
 pip install omsdk-1.2.423-py2.py3-none-any.whl
 
+<<<<<<< HEAD
 
 Json reading:  jq,fx,gr??
+=======
+#
+ansible-playbook  main.yml --tags inventory
+>>>>>>> develop
